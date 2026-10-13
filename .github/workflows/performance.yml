@@ -1,0 +1,58 @@
+name: API Performance Tests
+
+on:
+  pull_request:
+  workflow_dispatch:
+    inputs:
+      environment:
+        description: Target environment
+        type: choice
+        options: [local, qa, staging]
+        default: local
+      suite:
+        description: Tag to run (e.g. @smoke, @load, @stress)
+        default: '@smoke'
+      vu_multiplier:
+        description: Scale virtual users for every profile
+        default: '1'
+  schedule:
+    - cron: '0 2 * * 1-5' # nightly load run on weekdays
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      - run: npm run verify
+      - run: npm run test:unit
+
+  performance:
+    needs: verify
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+    env:
+      CI: 'true'
+      TEST_ENV: ${{ inputs.environment || 'local' }}
+      VU_MULTIPLIER: ${{ inputs.vu_multiplier || '1' }}
+      # Repository variable + secret per target API. Empty values fall back to the env JSON / mock token.
+      BASE_URL: ${{ vars.BASE_URL }}
+      API_BEARER_TOKEN: ${{ secrets.API_BEARER_TOKEN || 'local-dev-token-6f1d2c9e' }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with: { node-version: 22, cache: npm }
+      - run: npm ci
+      # Real environment variables/secrets above take precedence over values in this file.
+      - run: cp .env.example .env
+      - name: Run performance suite
+        run: npx bddgen && npx playwright test --project=api-load --grep "${{ inputs.suite || (github.event_name == 'schedule' && '@load') || '@smoke' }}"
+      - name: Upload reports
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: performance-reports-${{ github.run_number }}
+          path: reports/
+          retention-days: 30

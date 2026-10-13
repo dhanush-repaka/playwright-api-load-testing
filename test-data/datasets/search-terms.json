@@ -1,0 +1,42 @@
+[
+  {
+    "term": "laptop",
+    "category": "electronics"
+  },
+  {
+    "term": "headphones",
+    "category": "electronics"
+  },
+  {
+    "term": "monitor",
+    "category": "electronics"
+  },
+  {
+    "term": "desk",
+    "category": "furniture"
+  },
+  {
+    "term": "chair",
+    "category": "furniture"
+  },
+  {
+    "term": "lamp",
+    "category": "furniture"
+  },
+  {
+    "term": "novel",
+    "category": "books"
+  },
+  {
+    "term": "cookbook",
+    "category": "books"
+  },
+  {
+    "term": "jacket",
+    "category": "clothing"
+  },
+  {
+    "term": "sneakers",
+    "category": "clothing"
+  }
+]

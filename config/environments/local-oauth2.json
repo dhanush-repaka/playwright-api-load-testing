@@ -1,0 +1,31 @@
+{
+  "name": "local-oauth2",
+  "baseUrl": "http://localhost:3100",
+  "requestTimeoutMs": 10000,
+  "defaultHeaders": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "X-Client": "pw-load-framework"
+  },
+  "defaultLoadProfile": "smoke",
+  "defaultThresholds": [
+    {
+      "metric": "errorRate",
+      "operator": "<=",
+      "value": 1
+    },
+    {
+      "metric": "p95",
+      "operator": "<",
+      "value": 1000
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "tokenUrl": "/oauth/token",
+    "clientIdEnvVar": "OAUTH_CLIENT_ID",
+    "clientSecretEnvVar": "OAUTH_CLIENT_SECRET",
+    "scope": "api.read api.write",
+    "refreshSkewSeconds": 60
+  }
+}

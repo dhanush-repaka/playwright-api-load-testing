@@ -1,0 +1,27 @@
+{
+  "name": "qa",
+  "baseUrl": "https://qa-api.example.com",
+  "requestTimeoutMs": 15000,
+  "defaultHeaders": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "X-Client": "pw-load-framework"
+  },
+  "defaultLoadProfile": "load",
+  "defaultThresholds": [
+    {
+      "metric": "errorRate",
+      "operator": "<=",
+      "value": 1
+    },
+    {
+      "metric": "p95",
+      "operator": "<",
+      "value": 800
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "tokenEnvVar": "API_BEARER_TOKEN"
+  }
+}

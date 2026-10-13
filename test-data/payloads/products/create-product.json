@@ -1,0 +1,6 @@
+{
+  "sku": "SKU-{{randomString:10}}",
+  "name": "Load Test Product {{randomInt:1:9999}}",
+  "price": "{{randomInt:5:500}}",
+  "category": "electronics"
+}

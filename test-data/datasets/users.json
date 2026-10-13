@@ -1,0 +1,86 @@
+[
+  {
+    "username": "perf.user@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user01@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user02@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user03@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user04@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user05@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user06@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user07@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user08@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user09@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user10@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user11@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user12@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user13@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user14@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user15@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user16@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user17@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user18@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user19@loadtest.local",
+    "password": "LoadTest#2026"
+  },
+  {
+    "username": "perf.user20@loadtest.local",
+    "password": "LoadTest#2026"
+  }
+]

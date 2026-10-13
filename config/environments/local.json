@@ -1,0 +1,27 @@
+{
+  "name": "local",
+  "baseUrl": "http://localhost:3100",
+  "requestTimeoutMs": 10000,
+  "defaultHeaders": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "X-Client": "pw-load-framework"
+  },
+  "defaultLoadProfile": "smoke",
+  "defaultThresholds": [
+    {
+      "metric": "errorRate",
+      "operator": "<=",
+      "value": 1
+    },
+    {
+      "metric": "p95",
+      "operator": "<",
+      "value": 1000
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "tokenEnvVar": "API_BEARER_TOKEN"
+  }
+}

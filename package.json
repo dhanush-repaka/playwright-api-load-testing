@@ -1,0 +1,48 @@
+{
+  "name": "playwright-api-load-testing",
+  "version": "1.0.0",
+  "description": "Enterprise-style API load testing framework built on Playwright + BDD (playwright-bdd)",
+  "scripts": {
+    "bddgen": "bddgen",
+    "test": "bddgen && playwright test",
+    "test:smoke": "bddgen && playwright test --project=api-load --grep @smoke",
+    "test:load": "bddgen && playwright test --project=api-load --grep @load",
+    "test:stress": "bddgen && playwright test --project=api-load --grep @stress",
+    "test:spike": "bddgen && playwright test --project=api-load --grep @spike",
+    "test:journey": "bddgen && playwright test --project=api-load --grep @journey",
+    "test:qa": "cross-env TEST_ENV=qa npm test",
+    "test:staging": "cross-env TEST_ENV=staging npm test",
+    "mock:server": "tsx mock-server/server.ts",
+    "report": "playwright show-report reports/playwright-html",
+    "report:perf": "node -e \"require('child_process').exec((process.platform==='darwin'?'open':process.platform==='win32'?'start \\\"\\\"':'xdg-open')+' reports/performance/index.html')\"",
+    "steps:list": "bddgen export",
+    "typecheck": "tsc --noEmit",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "verify": "npm run typecheck && npm run lint && npm run format:check",
+    "clean": "node -e \"for (const d of ['reports','.features-gen']) require('fs').rmSync(d,{recursive:true,force:true})\"",
+    "test:unit": "bddgen && playwright test --project=framework-unit",
+    "test:perf": "bddgen && playwright test --project=api-load"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "type": "commonjs",
+  "devDependencies": {
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.64.0",
+    "@types/node": "^26.6.5",
+    "cross-env": "^10.1.0",
+    "dotenv": "^18.0.7",
+    "eslint": "^10.12.0",
+    "playwright-bdd": "^9.2.1",
+    "prettier": "^3.9.10",
+    "tsx": "^4.23.15",
+    "typescript": "^6.0.3",
+    "typescript-eslint": "^8.71.2"
+  },
+  "private": true,
+  "engines": {
+    "node": ">=20"
+  }
+}

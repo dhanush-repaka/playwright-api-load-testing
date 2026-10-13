@@ -1,0 +1,41 @@
+{
+  "smoke": {
+    "description": "Sanity check: minimal load to verify scripts and endpoints",
+    "virtualUsers": 2,
+    "rampUpMs": 0,
+    "durationMs": 5000,
+    "thinkTimeMs": 200,
+    "thinkTimeJitterMs": 50
+  },
+  "load": {
+    "description": "Expected average production traffic",
+    "virtualUsers": 20,
+    "rampUpMs": 5000,
+    "durationMs": 30000,
+    "thinkTimeMs": 100,
+    "thinkTimeJitterMs": 50
+  },
+  "stress": {
+    "description": "Beyond expected peak to find the breaking point",
+    "virtualUsers": 60,
+    "rampUpMs": 10000,
+    "durationMs": 45000,
+    "thinkTimeMs": 20,
+    "thinkTimeJitterMs": 10
+  },
+  "spike": {
+    "description": "Sudden burst of users with no ramp-up",
+    "virtualUsers": 80,
+    "rampUpMs": 0,
+    "durationMs": 15000,
+    "thinkTimeMs": 0
+  },
+  "soak": {
+    "description": "Moderate load over a long period to detect leaks/degradation",
+    "virtualUsers": 15,
+    "rampUpMs": 30000,
+    "durationMs": 1800000,
+    "thinkTimeMs": 500,
+    "thinkTimeJitterMs": 200
+  }
+}

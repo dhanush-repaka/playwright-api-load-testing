@@ -1,0 +1,32 @@
+{
+  "name": "staging",
+  "baseUrl": "https://staging-api.example.com",
+  "requestTimeoutMs": 15000,
+  "defaultHeaders": {
+    "Accept": "application/json",
+    "Content-Type": "application/json",
+    "X-Client": "pw-load-framework"
+  },
+  "defaultLoadProfile": "load",
+  "defaultThresholds": [
+    {
+      "metric": "errorRate",
+      "operator": "<=",
+      "value": 0.5
+    },
+    {
+      "metric": "p95",
+      "operator": "<",
+      "value": 500
+    },
+    {
+      "metric": "p99",
+      "operator": "<",
+      "value": 1200
+    }
+  ],
+  "auth": {
+    "type": "bearer",
+    "tokenEnvVar": "API_BEARER_TOKEN"
+  }
+}

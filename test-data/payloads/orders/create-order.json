@@ -1,0 +1,14 @@
+{
+  "clientOrderId": "{{uuid}}",
+  "items": [
+    { "productId": "{{randomInt:1:50}}", "quantity": "{{randomInt:1:3}}" },
+    { "productId": "{{randomInt:1:50}}", "quantity": "{{randomInt:1:2}}" }
+  ],
+  "shippingAddress": {
+    "line1": "{{randomInt:1:999}} Performance Street",
+    "city": "Loadville",
+    "postcode": "LT{{randomInt:10:99}} 1PW",
+    "country": "GB"
+  },
+  "paymentMethod": "TEST_INVOICE"
+}

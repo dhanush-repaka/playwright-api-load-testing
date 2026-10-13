@@ -1,0 +1,9 @@
+{
+  "externalRef": "{{uuid}}",
+  "firstName": "Perf",
+  "lastName": "User-{{vu.id}}-{{vu.iteration}}",
+  "email": "{{email}}",
+  "age": "{{randomInt:18:75}}",
+  "role": "customer",
+  "createdBy": "load-test-vu-{{vu.id}}"
+}
